@@ -1,4 +1,5 @@
 package Controller;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -82,6 +83,7 @@ public class AlgorithmAction {
 			for (int u : ke.get(temp)) {
 				if (chuaXet.get(u)) {
 					chuaXet.set(u, false);
+					truoc.set(u, temp);
 					stack.push(u);
 				}
 			}
@@ -102,6 +104,7 @@ public class AlgorithmAction {
 			for (int i : ke.get(current)) {
 				if (chuaXet.get(i)) {
 					chuaXet.set(i, false);
+					truoc.set(i, current);
 					queue.add(i);
 				}
 			}
