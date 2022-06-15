@@ -1,7 +1,6 @@
 package View;
 
 import java.awt.BorderLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -30,7 +29,6 @@ public class Main extends JFrame {
 		panel.add(mainPanel, BorderLayout.CENTER);
 		panel.add(adjustmentPanel, BorderLayout.WEST);
 		setContentPane(panel);
-
 		setSize(1000, 700);
 		setVisible(true);
 		setLocationRelativeTo(null);
