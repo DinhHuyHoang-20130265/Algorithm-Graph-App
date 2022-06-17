@@ -30,7 +30,7 @@ public class AlgorithmAction {
 		// thêm nội dung cho danh sách kề
 		for (int i = 0; i < mtk.size(); i++) {
 			for (int j = 0; j < mtk.size(); j++) {
-				if (ke(mtk, i, j) == true)
+				if (ke(i, j) == true)
 					ke.get(i).add(j);
 			}
 		}
@@ -52,8 +52,8 @@ public class AlgorithmAction {
 		return !chuaXet.get(point);
 	}
 
-	public boolean ke(ArrayList<ArrayList<Integer>> mtk, int x, int y) {
-		return mtk.get(x).get(y) == 1;
+	public boolean ke(int x, int y) {
+		return this.mtk.get(x).get(y) == 1;
 
 	}
 
@@ -130,6 +130,8 @@ public class AlgorithmAction {
 					min = distance.get(i);
 				}
 			}
+
+			ArrayList<Integer> tempArrayList = new ArrayList<>(distance);
 			chuaXet.set(u, false);
 			if (chuaXet.get(end)) {
 				for (int i = 0; i < mtk.size(); i++) {
@@ -139,8 +141,10 @@ public class AlgorithmAction {
 					}
 				}
 			}
+			if (tempArrayList.equals(distance))
+				break;
 		}
-		if (distance.get(end) == 10e6) {
+		if (distance.get(end) == 10e6 || truoc.get(end) == -1) {
 			stringBuilder.append("Khong co duong di");
 			return stringBuilder.toString();
 		} else {
