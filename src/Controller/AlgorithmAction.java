@@ -131,7 +131,7 @@ public class AlgorithmAction {
 				}
 			}
 
-			ArrayList<Integer> tempArrayList = new ArrayList<>(distance);
+			ArrayList<Integer> tempArrayList = new ArrayList<Integer>(distance);
 			chuaXet.set(u, false);
 			if (chuaXet.get(end)) {
 				for (int i = 0; i < mtk.size(); i++) {
